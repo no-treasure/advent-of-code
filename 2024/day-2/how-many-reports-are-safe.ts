@@ -16,6 +16,23 @@ function isSafe(reports: Array<number>): boolean {
   }, true)
 }
 
+function isSafeWithDampener(reports: Array<number>): boolean {
+  const safe = isSafe(reports)
+
+  if (safe) return true
+
+  return reports.some((_, index) => {
+    const dampened = [...reports]
+    dampened.splice(index, 1)
+
+    if (isSafe(dampened)) return true
+  })
+}
+
 export function howManyReportsAreSafe(reports: Array<Array<number>>): number {
   return reports.filter(isSafe).length
+}
+
+export function howManyReportsAreSafeWithDampener(reports: Array<Array<number>>): number {
+  return reports.filter(isSafeWithDampener).length
 }
