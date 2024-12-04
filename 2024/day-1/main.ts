@@ -15,9 +15,25 @@ function extractColumns(data: string): [Array<number>, Array<number>] {
   return [firstColumn, secondColumn]
 }
 
-Deno.readTextFile('./day-1/input.txt').then((data) => {
-  const [firstColumn, secondColumn] = extractColumns(data)
+const input = await Deno.readTextFile('./day-1/input.txt')
 
-  console.log(totalDistanceBetweenLists(firstColumn, secondColumn))
-  console.log(similarityScore(firstColumn, secondColumn))
+const [firstColumn, secondColumn] = extractColumns(input)
+
+Deno.bench({
+  name: 'Day 1 - part 1',
+  fn: () => {
+    totalDistanceBetweenLists(firstColumn, secondColumn)
+  }
+})
+
+Deno.bench({
+  name: 'Day 1 - part 2',
+  fn: () => {
+    similarityScore(firstColumn, secondColumn)
+  }
+})
+
+console.log({
+  partOne: totalDistanceBetweenLists(firstColumn, secondColumn),
+  partTwo: similarityScore(firstColumn, secondColumn)
 })

@@ -1,7 +1,12 @@
 import { countXmas } from './find-xmas.ts'
 
-Deno.readTextFile('./day-4/input.txt').then((data) => {
-  const partOne = countXmas(data.split('\n'))
+const file = await Deno.readTextFile('./day-4/input.txt')
 
-  console.log({ partOne })
+Deno.bench({
+  name: 'Day 4 - part 1',
+  fn: () => {
+    countXmas(file.split('\n'))
+  }
 })
+
+console.log({ partOne: countXmas(file.split('\n')) })

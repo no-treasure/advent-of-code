@@ -3,9 +3,25 @@ import {
   howManyReportsAreSafeWithDampener
 } from './how-many-reports-are-safe.ts'
 
-Deno.readTextFile('./day-2/input.txt').then((data) => {
-  const reports = data.split('\n').map((line) => line.split(' ').map(Number))
+const input = await Deno.readTextFile('./day-2/input.txt')
 
-  console.log(howManyReportsAreSafe(reports))
-  console.log(howManyReportsAreSafeWithDampener(reports))
+const reports = input.split('\n').map((line) => line.split(' ').map(Number))
+
+Deno.bench({
+  name: 'Day 2 - part 1',
+  fn: () => {
+    howManyReportsAreSafe(reports)
+  }
+})
+
+Deno.bench({
+  name: 'Day 2 - part 2',
+  fn: () => {
+    howManyReportsAreSafeWithDampener(reports)
+  }
+})
+
+console.log({
+  partOne: howManyReportsAreSafe(reports),
+  partTwo: howManyReportsAreSafeWithDampener(reports)
 })
