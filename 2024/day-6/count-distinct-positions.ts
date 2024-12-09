@@ -36,18 +36,8 @@ function countX(matrix: Array<Array<string>>): number {
   return count
 }
 
-function getTrace(
-  obstructionsMap: Array<Array<string>>,
-  guardX: number,
-  guardY: number
-): Array<string> {
-  const trace: Array<string> = []
-
-  for (let i = 0; i <= guardX; i++) {
-    trace.push(obstructionsMap[i][guardY])
-  }
-
-  return trace
+function getTrace(obstructionsMap: Array<Array<string>>, guardY: number): Array<string> {
+  return obstructionsMap.map((line) => line[guardY])
 }
 
 export function countDistinctPositions(obstructionsMap: Array<Array<string>>): number {
@@ -56,15 +46,19 @@ export function countDistinctPositions(obstructionsMap: Array<Array<string>>): n
   let guardX = findGuardPositionX(obstructionsMap)
   let guardY = findGuardPositionY(obstructionsMap, guardX)
 
-  let trace = getTrace(obstructionsMap, guardX, guardY)
+  let trace = getTrace(obstructionsMap, guardY)
 
-  let obstacleIndex = trace.findIndex((char) => char === '#')
+  let obstacleIndex = trace.findLastIndex((char, index) => char === '#' && index < guardX)
 
-  trace.forEach((char, charIndex) => {
-    if (charIndex > obstacleIndex && char === '.') {
-      matrix[charIndex][guardY] = 'X'
-    }
-  })
+  const fillX = () => {
+    trace.forEach((char, charIndex) => {
+      if (charIndex < guardX && charIndex > obstacleIndex && char === '.') {
+        matrix[charIndex][guardY] = 'X'
+      }
+    })
+  }
+
+  fillX()
 
   while (obstacleIndex != -1) {
     matrix[guardX][guardY] = 'X'
@@ -75,18 +69,15 @@ export function countDistinctPositions(obstructionsMap: Array<Array<string>>): n
     guardX = findGuardPositionX(matrix)
     guardY = findGuardPositionY(matrix, guardX)
 
-    trace = getTrace(matrix, guardX, guardY)
+    trace = getTrace(matrix, guardY)
 
-    obstacleIndex = trace.findIndex((char) => char === '#')
+    obstacleIndex = trace.findLastIndex((char, index) => char === '#' && index < guardX)
 
-    if (obstacleIndex !== -1) {
-      trace.forEach((char, charIndex) => {
-        if (charIndex > obstacleIndex && char === '.') {
-          matrix[charIndex][guardY] = 'X'
-        }
-      })
-    }
+    fillX()
   }
 
-  return countX(matrix) + trace.length
+  fillX()
+  matrix[guardX][guardY] = 'X'
+
+  return countX(matrix)
 }
