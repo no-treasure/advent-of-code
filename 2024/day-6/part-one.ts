@@ -40,7 +40,7 @@ function getTrace(obstructionsMap: Array<Array<string>>, guardY: number): Array<
   return obstructionsMap.map((line) => line[guardY])
 }
 
-export function countDistinctPositions(obstructionsMap: Array<Array<string>>): number {
+export function partOne(obstructionsMap: Array<Array<string>>): number {
   let matrix = obstructionsMap
 
   let guardX = findGuardPositionX(obstructionsMap)

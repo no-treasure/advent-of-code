@@ -1,11 +1,11 @@
 import { assertEquals } from '@std/assert'
-import { countMas } from './count-mas.ts'
+import { partTwo } from './part-two.ts'
 
 Deno.test({
   name: 'findXmas more should return 9',
   fn: () => {
     assertEquals(
-      countMas([
+      partTwo([
         '.M.S......',
         '..A..MSMS.',
         '.M.S.MAA..',

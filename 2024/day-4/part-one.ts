@@ -1,4 +1,4 @@
-export function countXmas(lines: Array<string>): number {
+export function partOne(lines: Array<string>): number {
   return lines.reduce((acc, line, lineIndex) => {
     return (
       acc +

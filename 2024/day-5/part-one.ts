@@ -1,4 +1,4 @@
-export function middlePageNumberWithSort(rules: Array<string>, pages: Array<string>): number {
+export function partOne(rules: Array<string>, pages: Array<string>): number {
   const rulesMap = new Map<string, string[]>()
 
   const rulesObj = Object.groupBy(
@@ -30,23 +30,10 @@ export function middlePageNumberWithSort(rules: Array<string>, pages: Array<stri
     })
   })
 
-  const reverseFiltered = pages
-    .filter((line) => !filtered.includes(line))
-    .map((line) => line.split(','))
+  const middleNumSum = filtered.reduce((acc, line) => {
+    const arr = line.split(',')
 
-  const sorted = reverseFiltered.map((line) =>
-    line.toSorted((a, b) => {
-      if (rulesMap.get(a) && rulesMap.get(a)!.includes(b)) return -1
-      if (rulesMap.get(b) && rulesMap.get(b)!.includes(a)) return 1
-
-      return 1
-    })
-  )
-
-  console.log({ sorted })
-
-  const middleNumSum = sorted.reduce((acc, line) => {
-    return acc + Number(line[Math.floor(line.length / 2)])
+    return acc + Number(arr[Math.floor(arr.length / 2)])
   }, 0)
 
   return middleNumSum

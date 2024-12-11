@@ -1,4 +1,5 @@
-import { middlePageNumber } from './middle-page-number.ts'
+import { partOne } from './part-one.ts'
+import { partTwo } from './part-two.ts'
 
 const input = (await Deno.readTextFile('./day-5/input.txt')).split('\n')
 
@@ -10,7 +11,7 @@ Deno.bench({
     const rules = input.slice(0, dividerIndex)
     const pages = input.slice(dividerIndex + 1)
 
-    middlePageNumber(rules, pages)
+    partOne(rules, pages)
   }
 })
 
@@ -22,6 +23,6 @@ Deno.bench({
     const rules = input.slice(0, dividerIndex)
     const pages = input.slice(dividerIndex + 1)
 
-    middlePageNumber(rules, pages)
+    partTwo(rules, pages)
   }
 })

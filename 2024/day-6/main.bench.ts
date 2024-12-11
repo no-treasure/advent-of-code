@@ -1,4 +1,4 @@
-import { countDistinctPositions } from './count-distinct-positions.ts'
+import { partOne } from './count-distinct-positions.ts'
 
 const input = await Deno.readTextFile('./day-6/input.txt')
 
@@ -7,6 +7,6 @@ Deno.bench({
   fn: () => {
     const matrix = input.split('\n').map((line) => line.split(''))
 
-    countDistinctPositions(matrix)
+    partOne(matrix)
   }
 })

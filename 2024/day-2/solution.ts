@@ -29,10 +29,10 @@ function isSafeWithDampener(reports: Array<number>): boolean {
   })
 }
 
-export function howManyReportsAreSafe(reports: Array<Array<number>>): number {
+export function partOne(reports: Array<Array<number>>): number {
   return reports.filter(isSafe).length
 }
 
-export function howManyReportsAreSafeWithDampener(reports: Array<Array<number>>): number {
+export function partTwo(reports: Array<Array<number>>): number {
   return reports.filter(isSafeWithDampener).length
 }

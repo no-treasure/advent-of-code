@@ -2,7 +2,7 @@ function isMasOrSam(input: string): boolean {
   return input === 'MAS' || input === 'SAM'
 }
 
-export function countMas(lines: Array<string>): number {
+export function partTwo(lines: Array<string>): number {
   return lines.reduce((acc, line, lineIndex) => {
     return (
       acc +

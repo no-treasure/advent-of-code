@@ -5,8 +5,6 @@ function generateCombinations(length: number): Array<Array<string>> {
 
   const smallerCombinations = generateCombinations(length - 1)
 
-  console.log({ smallerCombinations })
-
   return smallerCombinations.flatMap((combination) => OPERATORS.map((op) => [...combination, op]))
 }
 

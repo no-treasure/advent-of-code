@@ -1,5 +1,5 @@
 // ["mul(123, 123)"] -> 15129
-export function calculateMultiplications(multiplications: Array<string>): number {
+export function partOne(multiplications: Array<string>): number {
   return multiplications.reduce((acc, multiplication) => {
     const [a, b] = multiplication.split(',')
 

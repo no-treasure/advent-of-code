@@ -1,7 +1,4 @@
-export function totalDistanceBetweenLists(
-  firstColumn: Array<number>,
-  secondColumn: Array<number>
-): number {
+export function partOne(firstColumn: Array<number>, secondColumn: Array<number>): number {
   const sortedSecondColumn = secondColumn.sort()
 
   return firstColumn.sort().reduce((acc, value, index) => {

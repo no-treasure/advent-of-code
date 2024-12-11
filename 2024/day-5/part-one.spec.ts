@@ -1,11 +1,11 @@
 import { assertEquals } from '@std/assert'
-import { middlePageNumber } from './middle-page-number.ts'
+import { partOne } from './middle-page-number.ts'
 
 Deno.test({
   name: 'middle page number should return 143',
   fn: () => {
     assertEquals(
-      middlePageNumber(
+      partOne(
         [
           '47|53',
           '97|13',

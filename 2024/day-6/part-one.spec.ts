@@ -1,11 +1,11 @@
 import { assertEquals } from '@std/assert'
-import { countDistinctPositions } from './count-distinct-positions.ts'
+import { partOne } from './count-distinct-positions.ts'
 
 Deno.test({
-  name: 'countDistinctPositions should return',
+  name: 'partOne should return',
   fn: () => {
     assertEquals(
-      countDistinctPositions([
+      partOne([
         ['.', '.', '.', '.', '#', '.', '.', '.', '.', '.'],
         ['.', '.', '.', '.', '.', '.', '.', '.', '.', '#'],
         ['.', '.', '.', '.', '.', '.', '.', '.', '.', '.'],

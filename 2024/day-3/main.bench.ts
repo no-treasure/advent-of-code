@@ -1,5 +1,5 @@
-import { calculateMultiplications } from './calculate-multiplications.ts'
 import { filterMultiplications } from './filter-multiplications.ts'
+import { partOne } from './part-one.ts'
 
 const input = await Deno.readTextFile('./day-3/input.txt')
 
@@ -8,7 +8,7 @@ Deno.bench({
   fn: () => {
     const multiplications = input.match(/mul\(\d+,\d+\)/g) || []
 
-    calculateMultiplications(multiplications)
+    partOne(multiplications)
   }
 })
 
@@ -17,6 +17,6 @@ Deno.bench({
   fn: () => {
     const multiplicationsWithDo = input.match(/(mul\(\d+,\d+\))|(do\(\))|(don't\(\))/g) || []
 
-    calculateMultiplications(filterMultiplications(multiplicationsWithDo))
+    partOne(filterMultiplications(multiplicationsWithDo))
   }
 })
