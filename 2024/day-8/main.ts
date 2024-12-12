@@ -1,4 +1,5 @@
 import { partOne } from "./part-one.ts";
+import { partTwo } from "./part-two.ts";
 
 const input = await Deno.readTextFile("./day-8/input.txt");
 
@@ -9,4 +10,5 @@ const grid = input
 
 console.log({
   partOne: partOne(grid),
+  partTwo: partTwo(grid),
 });

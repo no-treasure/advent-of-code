@@ -2,7 +2,7 @@ type Antennas = Record<string, Array<Array<number>>>;
 type Grid = Array<Array<string>>;
 type Antinodes = Set<string>;
 
-function parseMap(grid: Grid) {
+function parseGrid(grid: Grid) {
   const antennas: Antennas = {};
 
   for (let x = 0; x < grid.length; x++) {
@@ -56,7 +56,8 @@ function calculateAntinodes(antennas: Antennas, grid: Grid): Antinodes {
 }
 
 export function partOne(grid: Grid) {
-  const antennas = parseMap(grid);
+  const antennas = parseGrid(grid);
+
   const antinodes = calculateAntinodes(antennas, grid);
 
   return antinodes.size;

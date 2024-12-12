@@ -32,7 +32,7 @@ jobs:
 
       - name: Verify formatting
         working-directory: ./2024
-        run: deno -v && deno fmt --check
+        run: deno fmt --check
 
       - name: Run linter
         working-directory: ./2024
