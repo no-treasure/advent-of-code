@@ -1,4 +1,4 @@
-import { assertEquals } from "@std/assert";
+import { assertEquals } from "jsr:@std/assert";
 import { partTwo } from "./part-two.ts";
 
 Deno.test(function addTest() {
