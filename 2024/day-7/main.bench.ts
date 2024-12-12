@@ -4,7 +4,7 @@ import { partTwo } from './part-two.ts'
 const input = await Deno.readTextFile('./day-7/input.txt')
 
 Deno.bench({
-  name: 'Day 6 part 1',
+  name: 'Day 7 part 1',
   fn: () => {
     const formattedInput = input
       .split('\n')
@@ -15,7 +15,7 @@ Deno.bench({
 })
 
 Deno.bench({
-  name: 'Day 6 part 2',
+  name: 'Day 7 part 2',
   fn: () => {
     const formattedInput = input
       .split('\n')
