@@ -1,11 +1,11 @@
 import { assertEquals } from '@std/assert'
-import { partTwo } from './middle-page-number-with-sort.ts'
+import { partOne } from './part-one.ts'
 
 Deno.test({
-  name: 'partTwo should return 123',
+  name: 'middle page number should return 143',
   fn: () => {
     assertEquals(
-      partTwo(
+      partOne(
         [
           '47|53',
           '97|13',
@@ -38,7 +38,7 @@ Deno.test({
           '97,13,75,29,47'
         ]
       ),
-      123
+      143
     )
   }
 })

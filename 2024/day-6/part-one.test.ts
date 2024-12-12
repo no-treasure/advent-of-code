@@ -1,5 +1,5 @@
 import { assertEquals } from '@std/assert'
-import { partOne } from './count-distinct-positions.ts'
+import { partOne } from './part-one.ts'
 
 Deno.test({
   name: 'partOne should return',
