@@ -10,9 +10,9 @@ name: Deno
 
 on:
   push:
-    branches: ["main"]
+    branches: ['main']
   pull_request:
-    branches: ["main"]
+    branches: ['main']
 
 permissions:
   contents: read
@@ -34,7 +34,7 @@ jobs:
 
       - name: Verify formatting
         working-directory: ./2024
-        run: deno fmt --check
+        run: deno -v && deno fmt --check
 
       - name: Run linter
         working-directory: ./2024
