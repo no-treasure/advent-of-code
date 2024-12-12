@@ -29,6 +29,9 @@ jobs:
       - name: Setup repo
         uses: actions/checkout@v4
 
+      - name: Use Deno Version ${{ matrix.deno-version }}
+        uses: denolib/setup-deno@v2
+
       - name: Verify formatting
         working-directory: ./2024
         run: deno fmt --check
