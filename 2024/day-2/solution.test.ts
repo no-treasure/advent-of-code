@@ -1,8 +1,8 @@
-import { assertEquals } from '@std/assert'
-import { partOne, partTwo } from './solution.ts'
+import { assertEquals } from "@std/assert";
+import { partOne, partTwo } from "./solution.ts";
 
 Deno.test({
-  name: 'partOne should return 2',
+  name: "partOne should return 2",
   fn: () => {
     assertEquals(
       partOne([
@@ -11,15 +11,15 @@ Deno.test({
         [9, 7, 6, 2, 1],
         [1, 3, 2, 4, 5],
         [8, 6, 4, 4, 1],
-        [1, 3, 6, 7, 9]
+        [1, 3, 6, 7, 9],
       ]),
-      2
-    )
-  }
-})
+      2,
+    );
+  },
+});
 
 Deno.test({
-  name: 'partTwo should return 4',
+  name: "partTwo should return 4",
   fn: () => {
     assertEquals(
       partTwo([
@@ -28,9 +28,9 @@ Deno.test({
         [9, 7, 6, 2, 1],
         [1, 3, 2, 4, 5],
         [8, 6, 4, 4, 1],
-        [1, 3, 6, 7, 9]
+        [1, 3, 6, 7, 9],
       ]),
-      4
-    )
-  }
-})
+      4,
+    );
+  },
+});

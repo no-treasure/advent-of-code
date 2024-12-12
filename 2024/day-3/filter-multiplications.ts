@@ -1,19 +1,19 @@
 export function filterMultiplications(inputMultiplications: Array<string>) {
-  let enabled = true
+  let enabled = true;
 
   return inputMultiplications.filter((multiplication) => {
     if (multiplication === `don't()`) {
-      enabled = false
+      enabled = false;
 
-      return false
+      return false;
     }
 
     if (multiplication === `do()`) {
-      enabled = true
+      enabled = true;
 
-      return false
+      return false;
     }
 
-    return enabled
-  }, 0)
+    return enabled;
+  }, 0);
 }

@@ -1,23 +1,23 @@
-import { assertEquals } from '@std/assert'
-import { partTwo } from './part-two.ts'
+import { assertEquals } from "@std/assert";
+import { partTwo } from "./part-two.ts";
 
 Deno.test({
-  name: 'findXmas more should return 9',
+  name: "findXmas more should return 9",
   fn: () => {
     assertEquals(
       partTwo([
-        '.M.S......',
-        '..A..MSMS.',
-        '.M.S.MAA..',
-        '..A.ASMSM.',
-        '.M.S.M....',
-        '..........',
-        'S.S.S.S.S.',
-        '.A.A.A.A..',
-        'M.M.M.M.M.',
-        '..........'
+        ".M.S......",
+        "..A..MSMS.",
+        ".M.S.MAA..",
+        "..A.ASMSM.",
+        ".M.S.M....",
+        "..........",
+        "S.S.S.S.S.",
+        ".A.A.A.A..",
+        "M.M.M.M.M.",
+        "..........",
       ]),
-      9
-    )
-  }
-})
+      9,
+    );
+  },
+});

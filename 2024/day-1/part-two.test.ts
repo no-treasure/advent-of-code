@@ -1,6 +1,6 @@
-import { assertEquals } from '@std/assert'
-import { partTwo } from './part-two.ts'
+import { assertEquals } from "@std/assert";
+import { partTwo } from "./part-two.ts";
 
 Deno.test(function addTest() {
-  assertEquals(partTwo([3, 4, 2, 1, 3, 3], [4, 3, 5, 3, 9, 3]), 31)
-})
+  assertEquals(partTwo([3, 4, 2, 1, 3, 3], [4, 3, 5, 3, 9, 3]), 31);
+});
