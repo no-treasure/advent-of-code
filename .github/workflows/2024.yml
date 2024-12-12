@@ -21,16 +21,14 @@ jobs:
   test:
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        deno-version: [2.1.2]
-
     steps:
       - name: Setup repo
         uses: actions/checkout@v4
 
-      - name: Use Deno Version ${{ matrix.deno-version }}
-        uses: denolib/setup-deno@v2
+      - name: Setup Deno
+        uses: denoland/setup-deno@61fe2df320078202e33d7d5ad347e7dcfa0e8f31
+        with:
+          deno-version: v2.1.2
 
       - name: Verify formatting
         working-directory: ./2024
