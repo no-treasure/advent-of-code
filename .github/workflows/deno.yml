@@ -30,6 +30,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Verify formatting
+        working-directory: ./2024
         run: deno fmt --check
 
       - name: Run linter
