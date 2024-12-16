@@ -8,13 +8,13 @@ export function partOne(input: string): number {
   const disk = input.split("").map(Number).reduce((acc, value, index) => {
     const isFile = index % 2 === 0;
 
-    const segment = repeatValueInArray(isFile ? String(currentId) : ".", value) 
+    const segment = repeatValueInArray(isFile ? String(currentId) : ".", value);
 
     if (isFile) {
       currentId++;
     }
 
-    return acc.concat(segment)
+    return acc.concat(segment);
   }, [] as Array<string>);
 
   const dotsCount = disk.filter((v) => v === ".").length;
