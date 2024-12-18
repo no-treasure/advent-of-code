@@ -9,4 +9,3 @@ console.log({
   partOne: partOne(grid),
   partTwo: partTwo(grid),
 });
-

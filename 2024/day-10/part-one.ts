@@ -1,8 +1,8 @@
-function moveFrom(
-  trailHead: [number, number],
+function moveToPeak(
+  start: [number, number],
   grid: Array<Array<string>>,
 ): Set<string> {
-  let [x, y] = trailHead;
+  let [x, y] = start;
   let currentValue = Number(grid[x][y]);
 
   let forks: Array<[number, number]> = [];
@@ -30,7 +30,7 @@ function moveFrom(
     [x, y] = forks.shift() || [-1, -1];
 
     forks.forEach((fork) => {
-      moveFrom(fork, grid).forEach((peak) => {
+      moveToPeak(fork, grid).forEach((peak) => {
         peaksRiched.add(peak);
       });
     });
@@ -52,8 +52,8 @@ export function partOne(grid: Array<Array<string>>): number {
     }
   }
 
-  const res = trailHeads.map((trailHead) => {
-    return moveFrom(trailHead, grid);
+  const res = trailHeads.map((start) => {
+    return moveToPeak(start, grid);
   });
 
   return res.reduce((acc, v) => acc + v.size, 0);
