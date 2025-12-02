@@ -43,8 +43,6 @@ export function partTwo(rules: Array<string>, pages: Array<string>): number {
     })
   );
 
-  console.log({ sorted });
-
   const middleNumSum = sorted.reduce((acc, line) => {
     return acc + Number(line[Math.floor(line.length / 2)]);
   }, 0);
