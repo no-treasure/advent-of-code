@@ -1,1 +1,1 @@
-/Users/arseniy/Projects/advent-of-code/2025-rust/day-1/target/debug/day-1: /Users/arseniy/Projects/advent-of-code/2025-rust/day-1/src/main.rs /Users/arseniy/Projects/advent-of-code/2025-rust/day-1/src/part_one.rs
+/Users/arseniy/Projects/advent-of-code/2025-rust/day-1/target/debug/day-1: /Users/arseniy/Projects/advent-of-code/2025-rust/day-1/src/main.rs /Users/arseniy/Projects/advent-of-code/2025-rust/day-1/src/part_one.rs /Users/arseniy/Projects/advent-of-code/2025-rust/day-1/src/part_two.rs
