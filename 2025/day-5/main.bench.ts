@@ -9,3 +9,10 @@ Deno.bench({
     partOne(input);
   },
 });
+
+Deno.bench({
+  name: "Day 5 - part 2",
+  fn: () => {
+    partOne(input);
+  },
+});
